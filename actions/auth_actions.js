@@ -8,5 +8,11 @@ import {
 //AsyncStorage.getItem('fb_token');
 
 export const facebookLogin = () => {
-  
+  let token = await AsyncStorage.getItem('fb_token');
+
+  if (token) {
+    //dispatch an action saying fb login is done
+  } else {
+    // start up fb login process
+  }
 };
