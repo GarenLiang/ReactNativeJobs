@@ -9,7 +9,7 @@ import {
 //AsyncStorage.setItem('fb_token', token);
 //AsyncStorage.getItem('fb_token');
 
-export const facebookLogin = () => {
+export const facebookLogin = () => async dispatch => {
   let token = await AsyncStorage.getItem('fb_token');
 
   if (token) {
@@ -21,7 +21,7 @@ export const facebookLogin = () => {
   }
 };
 const doFacebookLogin = async dispatch=> {
-  let { type, token } = await Facebook.logInWithReadPermissionAsync('1457184827674095',{
+  let { type, token } = await Facebook.logInWithReadPermissionsAsync('1457184827674095',{
     permissions: ['public_profile']
   });
   if (type === 'cancel') {
