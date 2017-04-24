@@ -14,6 +14,10 @@ class MapScreen extends Component {
   componentDidMount() {
     this.setState({ mapLoaded: true });
   }
+  onRegionChangeComplete = (region) => {
+    console.log(region);
+    this.setState({ region });
+  }
   render() {
     if (!this.state.mapLoaded) {
       return (
@@ -27,6 +31,7 @@ class MapScreen extends Component {
         <MapView
         region={this.state.region}
         style={{ flex: 1 }}
+        onRegionChangeComplete={this.onRegionChangeComplete}
         />
       </View>
     );
