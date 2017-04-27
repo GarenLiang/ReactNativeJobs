@@ -10,7 +10,7 @@ const JOB_QUERY_PARAMS = {
   publisher: '4201738803816157',
   format: 'json',
   v: '2',
-  latlng: 1,
+  latlong: 1,
   radius: 10,
   q: 'javascript'
 };
