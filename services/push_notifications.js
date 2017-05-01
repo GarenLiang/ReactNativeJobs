@@ -1,4 +1,7 @@
 import { Permissions, Notifications } from 'expo';
+import axios from 'axios';
+
+const PUSH_ENDPOINT = 'http://rallycoding.herokuapp.com/api/tokens';
 
 export default async () => {
   let previousToken = await AsyncStorage.getItem('pushtoken');
@@ -13,5 +16,7 @@ export default async () => {
     }
 
     let token = await Notifications.getExponentPushTokenAsync();
+    await axios.post(PUSH_ENDPOINT, { token: { token } });
+    AsyncStorage.setItem('pushtoken', token);
   }
 };
