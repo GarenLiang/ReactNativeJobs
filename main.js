@@ -27,6 +27,8 @@ class App extends React.Component {
             })
           }
         }, {
+          tabBarPosition: 'bottom',
+          //swipeEnabled: false,
           tabBarOptions: {
             labelStyle: { fontSize: 12 }
           }
